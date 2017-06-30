@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Post here</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> Poster une Annonce </h1>
+        <form action ="Createpost.php" method ="POST">
+            <p>
+                <label for="nom"> Titre: </label>
+                <input type="text" name="titre" id="titre" />
+            </p>
+            
+            <p>
+                <label for="datedepart"> Je pars le: </label>
+                <input type="date" name ="date" id="datedepart" />
+            </p>
+            
+            <p>
+                <label for="heuredepart"> à: </label>
+                <input type="time" name="time" id="time" />
+            </p>
+            
+            <p>
+                <label for="lieudepart"> Lieu de départ: </label>
+                <input type= "text" name="lieudepart" >
+                <label for ="lieuarrivee"> Lieu d'arrivée: </label>
+                <input type= "text" name="lieuarrivee" >
+                <label for ="prix"> Prix (€): </label>
+                <input type= "number" name="prix" min="0" max="">
+
+                <label for= "weight"> Poids maximum (kg): </label>
+                <input type ="number" name ="weight" min="0" max="">
+
+            <p>
+                <label for= "details"> Plus d'informations: </label>
+                <textarea id= "infos" name ='infos'></textarea>
+                </br>
+            <p>
+                <input type="submit" name="valider" value="Valider"/>
+            </p>
+        </form>
+
+
+    </body>
+</html>
