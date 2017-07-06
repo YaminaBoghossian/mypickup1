@@ -8,18 +8,26 @@
 
 include_once 'Classes/Stock.php';
 include_once'Classes/Posts.php';
+include_once 'Classes/Users.php';
+ $post = new Stock();
 
 if (isset($_POST['titre'])) {
-    
+    session_start();
+    if (isset($_SESSION['utilisateur'])){
+    $user = $_SESSION ['utilisateur'];
+    if (is_file('utilisateur/'.$user.'.txt')){
+        $newuser=$post->readUser($user);
+        $post->createPost(new Posts($_POST['titre'], $_POST['lieudepart'], $_POST['lieuarrivee'], $_POST['date'], $_POST['time'], $_POST['prix'], $_POST['weight'], $_POST['infos'], $newuser ));
+    }
+    }
     
     //On récupère les variables
-    $post = new Stock();
+   
     //var_dump($newpost = new Posts($_POST['titre'], $_POST ['lieudepart'], $_POST['lieuarrivee'], $_POST['date'], $_POST['time'], $_POST['prix'], $_POST['weight'], $_POST['infos']));
-    $post->createPost(new Posts($_POST['titre'], $_POST['lieudepart'], $_POST['lieuarrivee'], 
-            $_POST['date'], $_POST['time'], $_POST['prix'], $_POST['weight'], $_POST['infos']));
-
+    
   
 }
+
 ?>
-<a href="/mypickup2/index.php">Retour</a>
+<a href="/mypickup1/index.php">Retour</a>
 

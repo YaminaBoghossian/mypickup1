@@ -15,19 +15,20 @@ class Stock {
         fclose($newpost);
     }
     
-    function readPost(String $title) : Posts{
+    
+    
         // regarder si le fichier titre.txt existe
         // unserialize du contenu de titre.txt
         // retourner le post
-    }
+   // }
     
-    function readPostsList() :Array {
+    //function readPostsList() :Array {
         // lister le contenu du dossier annonce
         // ouvrir les fichiers un à un
         // unserialize le contenu du fichier
         // ajouter le post au tableau
         // retourner le tableau
-    }
+    
 
     function createUser(Users $user) {
 
@@ -43,18 +44,43 @@ class Stock {
         fclose($new_file);
     }
     
-    // TODO : implémenter en premier à partir de login.php
-    function readUser(String $username) :Users {
-        // regarder si le fichier toto.txt existe
-        // unserialize du contenu de toto.txt
-        // retourner l'utilisateur toto
-    }
+    function readUser (string $username): Users{
+      
+        $contenu = unserialize(file_get_contents('./utilisateur/' . $username.  '.txt'));
+        return $contenu;
 
-    function readUsersList() :Array {
+    }
+    
+   
+    
+    function asHtml (Users $user){
+    return '<pre>Username: '. $user->getUsername() .'</pre><pre>Email:'.
+            $user->getEmail().'</pre>';
+    }
+    
+
+
+
+    //function readUsersList() :Array {
         // lister le contenu du dossier utilisateur
         // ouvrir les fichiers un à un
         // unserialize le contenu du fichier
         // ajouter le user au tableau
         // retourner le tableau
-    }
-}
+    
+
+   function readPosts(): Array {
+       $dossier = './annonce/';
+       $files = scandir($dossier);
+       $listeAnnonce = [];
+       foreach ($files as $contenupost) {
+           if (!is_dir($contenupost)) {
+               $listeAnnonce[] = unserialize(file_get_contents($dossier . $contenupost));
+           }
+       }
+       return $listeAnnonce;
+}}
+   
+    
+
+    

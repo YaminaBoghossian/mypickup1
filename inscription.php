@@ -11,7 +11,8 @@ include_once'Classes/Users.php';
 
 
 if(isset($_POST['pseudo'])
-   && isset($_POST['mdp'])){
+   && isset($_POST['mdp'])
+        ){
    //On récupère les variables
     $user = new Stock();
     $user->createUser(new Users($_POST['pseudo'], md5($_POST['mdp'])));     
@@ -28,5 +29,5 @@ if(isset($_POST['pseudo'])
 }
 ?>
 
-<a href="/mypickup2/index.php">Retour</a>
+<a href="/mypickup1/index.php">Retour</a>
 

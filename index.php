@@ -6,15 +6,46 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>My PickUp</title>
 </head>
-<body>
+
 <h1> Bienvenue sur My Pickup ! </h1>
 
 
 
    <?php require_once('header.php'); 
-    ?>
+       ?>
+</br>
 
-<a href="/mypickup2/deconnexion.php"> Deconnexion </a>
+<br/>
+<a href="deconnexion.php">Déconnexion</a>
+</br>
 
-</body>
+
+
+<?php
+include_once'Classes/Users.php';
+include_once 'Classes/Posts.php';
+require_once('Classes/Stock.php');
+   $newstock = new Stock();
+
+  
+if (isset($_SESSION['utilisateur'])){
+    $user = $_SESSION['utilisateur'];
+    if (is_file('utilisateur/'.$user.'.txt')){
+        
+       $contenu= $newstock->readUser($user);
+        echo $newstock->asHtml($contenu);
+
+    }
+}
+$listeAnnonce = $newstock->readPosts();
+
+foreach ($listeAnnonce as $annonce){
+
+   echo '<br/>'.$annonce->htmlpost();
+}
+
+
+
+?>
+
 </html>

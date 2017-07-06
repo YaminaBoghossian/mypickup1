@@ -7,9 +7,10 @@ class Users {
    private $picture;
    private $email;
 
-   function __construct($username, $password) {
+   function __construct($username, $password, $email) {
        $this->username = $username;
        $this->password = $password;
+       $this->email= $email;
        
    }
    
@@ -44,6 +45,11 @@ class Users {
    function setEmail($email) {
        $this->email = $email;
    }
+   
+       function asHtml (){
+    return '<pre>Username: '. $this->username.'</pre><pre>Email:'.
+    $this->email.'</pre>';
+    }
 }
 
 

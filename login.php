@@ -32,21 +32,17 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
             //On stock le nom de l'utilisateur dans celle ci
 
             $_SESSION['utilisateur'] = $pseudo;
-            echo '<span style="color:green; font-weight: bold">You are now logged in!</span>';
+            echo '<span style="color:green; font-weight: bold">You are now logged in!</span>'.
+            '<a href="/mypickup1/Postform.html"> Poster une annonce </a>';
+         echo '<p>Bonjour, ' . $_SESSION['utilisateur'].'</p>';
+        } 
         } else {
             //sinon messages d'erreur
             echo 'l\'utilisateur ou le mdp n\'existe pas';
-            exit();
+           exit();
         }
-    }
+    
+     
 }
+
 ?>
-<html>
-    <?php
-    echo '<p>Bonjour, ' . $_SESSION['utilisateur'].'</p>';
-    ?>
-
-    <a href="deconnexion.php">Déconnexion</a>
-    <a href="Postform.html">Poster une annonce</a>
-
-</html>

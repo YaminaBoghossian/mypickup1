@@ -15,10 +15,10 @@ loggé -->
 session_start();
 if(isset($_SESSION['utilisateur'])){
    echo '<p>Bonjour, '.$_SESSION['utilisateur'];
-      
+   
 }else{
-   echo '<p> Inscrivez vous ici </p>';
-   include './Postform.html';
+   echo '<p> M\'inscrire ou me connecter </p>';
+   
 ?>
 
 <form id="username" action="inscription.php" method="POST">
@@ -37,9 +37,8 @@ if(isset($_SESSION['utilisateur'])){
    <input type="password" name="mdp">
    <button>Connexion</button>
 </form>
-<a href="/mypickup2/deconnexion.php"> Deconnexion </a>
+
 <?php } ?>
-<!--Affiché "salut [utilisateur]" si l'utilisateur
-est loggé-->
+
 </body>
 </html>

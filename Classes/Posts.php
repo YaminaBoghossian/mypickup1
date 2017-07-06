@@ -1,6 +1,5 @@
 <?php
-
-
+include_once 'Users.php';
 // CLASSES CREATION => POSTS //
 
 class Posts {
@@ -13,8 +12,10 @@ class Posts {
     public $price;
     public $parcelsize;  
     public $postdetails;
+    public $author;
     
-    function __construct( $posttitle, $departure, $arrivallocation, $departuredate, $departuretime, $price, $parcelsize, $postdetails) {
+    
+    function __construct( $posttitle, $departure, $arrivallocation, $departuredate, $departuretime, $price, $parcelsize, $postdetails, Users $author) {
        // $this->postdate = $postdate;
         $this->posttitle = $posttitle;
         $this->departure = $departure;
@@ -24,8 +25,12 @@ class Posts {
         $this->price = $price;
         $this->parcelsize = $parcelsize;
         $this->postdetails = $postdetails;
+       $this->author = $author->getUsername();
+       }
+    function getAuthor(){
+        return $this->author;
     }
-    
+
     function getPostdate() {
         return $this->postdate;
     }
@@ -96,5 +101,11 @@ class Posts {
 
     function setPostdetails($postdetails) {
         $this->postdetails = $postdetails;
+    }
+    
+        function htmlpost (){
+        return '<pre>Titre:'. $this->posttitle.'</pre><pre> Depart:'.$this->departure.'</pre><pre> Ville d\'arrivée:'.$this->arrivallocation.'</pre><pre> Autheur : '.$this->author.'</pre><pre>Date d\'arrivée: '.$this->departuredate.'</pre><pre> Prix:'.$this->departuretime.'</pre><pre>';
+        
+        
     }
 }
