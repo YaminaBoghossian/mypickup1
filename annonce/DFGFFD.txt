@@ -1,1 +1,0 @@
-O:5:"Posts":9:{s:8:"postdate";N;s:9:"posttitle";s:6:"DFGFFD";s:9:"departure";N;s:15:"arrivallocation";s:0:"";s:13:"departuredate";s:0:"";s:13:"departuretime";s:0:"";s:5:"price";s:0:"";s:10:"parcelsize";s:0:"";s:11:"postdetails";s:0:"";}

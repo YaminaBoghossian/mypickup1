@@ -33,8 +33,9 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
 
             $_SESSION['utilisateur'] = $pseudo;
             echo '<span style="color:green; font-weight: bold">You are now logged in!</span>'.
-            '<a href="/mypickup1/Postform.html"> Poster une annonce </a>';
-         echo '<p>Bonjour, ' . $_SESSION['utilisateur'].'</p>';
+            '<a href="/mypickup1/Postform.html"> Poster une annonce </a>
+            <br/><a href="deconnexion.php">Déconnexion</a>';
+echo '<p>Bonjour, ' . $_SESSION['utilisateur'].'</p>';
         } 
         } else {
             //sinon messages d'erreur

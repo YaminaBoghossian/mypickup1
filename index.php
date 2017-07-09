@@ -15,9 +15,7 @@
        ?>
 </br>
 
-<br/>
-<a href="deconnexion.php">Déconnexion</a>
-</br>
+
 
 
 

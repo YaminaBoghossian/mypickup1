@@ -104,7 +104,7 @@ class Posts {
     }
     
         function htmlpost (){
-        return '<pre>Titre:'. $this->posttitle.'</pre><pre> Depart:'.$this->departure.'</pre><pre> Ville d\'arrivée:'.$this->arrivallocation.'</pre><pre> Autheur : '.$this->author.'</pre><pre>Date d\'arrivée: '.$this->departuredate.'</pre><pre> Prix:'.$this->departuretime.'</pre><pre>';
+        return '<pre> Auteur : '.$this->author.'</pre><pre>Titre:'. $this->posttitle.'</pre><pre> Depart:'.$this->departure.'</pre><pre> Date de départ :'.$this->departuredate.'</pre><pre>Heure de départ:'.$this->departuretime.'</pre><pre>Ville d\'arrivée:'.$this->arrivallocation.'</pre><pre> Prix:'.$this->price.'</pre><pre> Plus de détails:'.$this->postdetails.'</pre><pre>';
         
         
     }

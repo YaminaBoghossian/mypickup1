@@ -1,1 +1,0 @@
-O:5:"Posts":9:{s:8:"postdate";N;s:9:"posttitle";s:5:"adolf";s:9:"departure";s:2:"oz";s:15:"arrivallocation";s:2:"oz";s:13:"departuredate";s:10:"2017-06-18";s:13:"departuretime";s:5:"00:03";s:5:"price";s:2:"10";s:10:"parcelsize";s:1:"6";s:11:"postdetails";s:3:"oz ";}
