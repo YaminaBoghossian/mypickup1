@@ -39,6 +39,6 @@ if(isset($_SESSION['utilisateur'])){
 </form>
 
 <?php } ?>
-
+   <a href='deconnexion.php'> Se déconnecter </a>
 </body>
 </html>

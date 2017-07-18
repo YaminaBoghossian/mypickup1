@@ -1,6 +1,283 @@
 <!DOCTYPE html>
-
 <html>
+    <title>Post here</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>body,
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+a {
+  color: #6897bb !important;
+  outline: none !important;
+  text-decoration: underline !important;
+}
+
+.checkbox {
+  color: #fff;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  border: 3px solid transparent;
+  box-shadow: none;
+  outline: 0 none;
+  height: 50px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border: 3px solid #6897bb;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.modal-footer .btn-default {
+  border: 1px solid #ccc;
+}
+
+.modal-footer .btn-default:hover {
+  border: 1px solid #6897bb;
+  background: #fff;
+}
+
+.btn-default {
+  border: 3px solid transparent;
+}
+
+.btn-default:hover {
+  border: 3px solid #6897bb;
+  background: #fff;
+}
+
+.wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-body {
+  height: 300px;
+  overflow-y: scroll;
+}
+            </style>
+</head>
+    <body>
+        <header class="clearfix">
+    <div class="container">
+			<div class="header-left">
+				<h1>My Pick Up</h1>
+			</div>
+			<div class="header-right">
+				<label for="open">
+					<span class="hidden-desktop"></span>
+				</label>
+				
+				<nav>
+					<a href="#">S'inscrire</a>
+					<a href="#">Se connecter</a>
+					<a href="#">Voir les annonces</a>
+					<a href="#">A propos</a>
+					<a href="#">Contact</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+<section class="clearfix">
+		<div class="container">
+			<div class="section-left">
+				<h1 class="section-title">Lorem ipsum dolor sit amet.</h1>
+				<h5 class="section-tagline">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+			</div>
+			<div class="section-right">
+				<button class="learn-more">En savoir plus</button>
+			</div>
+		</div>
+	</section>
+<h1> Poster une Annonce </h1>
+<div class="wrapper">
+  <form class="form-horizontal " role="form" action ="Createpost.php" method ="POST">
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        
+       
+            <p>
+                
+                <input type="text" name="titre" id="titre" placeholder="Titre"/>
+            </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <p>
+               
+                <input type="date" name ="date" id="datedepart" placeholder="Date du départ"/>
+            </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+         <p>
+                
+                <input type="time" name="time" id="time" placeholder="Heure du départ" />
+            </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+       <p>
+                
+                <input type= "text" name="lieudepart" placeholder='Lieu du départ'/>
+</p>
+      </div>
+    </div>
+       <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+       <p>
+                
+                <input type= "text" name="lieuarrivee" placeholder='Lieu arrivée' />
+</p>
+      </div>
+       </div>
+       <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+       <p>
+                <input type= "text" name="lieuarrivee" placeholder='Lieu arrivée' />
+       </p>
+      </div>
+       </div>
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <div class="checkbox">
+          <label><input type = "checkbox" required>
+          I agree to <a href="#myModal" data-toggle="modal" data-target="#myModal">
+          Terms and Conditions
+          </a>
+        </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <button type="submit" class="btn btn-default">Sign up</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> 
+          Terms and Conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, eum eu ceteros deseruisse, mea ex odio facete vocibus. Usu et inimicus pertinacia disputationi, mea nihil zril blandit no. Mollis offendit mel ne, facete putant melius vis ea, vel prima conclusionemque ne. Ea vim sumo
+          veniam, ea elitr verear iudicabit est. Quo cu meliore deleniti tractatos. Impedit insolens sed te. Eum ludus platonem reprehendunt ea. Mei verterem singulis id, munere delectus constituam id usu. Per ei omnes pertinax, mel ea quas luptatum.
+          </br>
+          </br>
+          Eu probo suscipit eum, omittam deleniti ea pri. Ea ignota prompta vim, id est ornatus veritus contentiones. Eu duo quot omnesque atomorum, in tation efficiantur liberavisse his. Admodum conceptam contentiones quo eu. An nam brute mundi. Essent sententiae
+          eloquentiam nec ne. Mel quaeque consequat eu, cum ex clita nusquam. Graece gloriatur vim ut. Semper alterum ea eum. Vis et sint wisi omittantur, saepe petentium eos id. Te vis utroque scaevola, per ex legere vituperata. Mei ei possim albucius,
+          ne sint consulatu disputationi duo, cu eos novum fabulas labores. Ex vim nonumy impedit, eos in timeam suscipiantur, ad vim laoreet noluisse assueverit. Cu possim salutatus sed. Sale ubique contentiones pri an, in est dolores molestiae intellegat.
+          Omnes vidisse duo no, doctus iriure cu eos, iudico voluptatum scripserit vix in. Qui ex reprimique liberavisse, at nam alia petentium. At mea esse expetendis, at justo doming eam. Ad pri labores voluptua. Intellegam neglegentur mediocritatem
+          id vix. No vim essent voluptatum honestatis, ea doming bonorum fabellas quo. Ut sed aeterno percipitur. Alii dissentias ei nam, ad mei causae fuisset. Id solet feugiat fabulas vel, mei rebum dictas debitis cu, ea sumo choro soleat mea. Cu laudem
+          persequeris eos, minim possit ius an, meis praesent torquatos pri id. Cu vis tation tacimates, iriure fabulas cum id. Habeo brute minimum cum ea, probo fuisset quo ad. Vix eu fabulas volutpat, sit putent prodesset philosophia eu, agam mediocritatem
+          cu mei. Eum at postea appareat. Qui no nobis forensibus. Mea nostro discere ad, at primis ornatus est, facilisis prodesset voluptatum sea id. Nec probatus intellegat ut. Vis rebum aeterno ad, sed te assum possit. Mei te dico possim fuisset,
+          an vim causae aliquando mnesarchum. Quo vidit dicant in, modo dicam dissentiet mel at, reprehendunt concludaturque eam no. Nobis semper eloquentiam no has. Quod invenire signiferumque eam an, elit mediocritatem has ad. Quo in nostrud gloriatur
+          complectitur. Sint rebum tincidunt ius te, mei ne disputationi consequuntur. Vix no intellegam intellegebat consequuntur, eu sit oblique perpetua. Eu est error mnesarchum. At inani copiosae nec, ut his nulla elitr. Illud mentitum omittantur
+          ea vix.
+          </br>
+          </br>
+          An quo habemus convenire, id duo eruditi debitis. Vis ex invidunt menandri, nam ad ignota definiebas scriptorem. Sed te atqui graecis democritum. Diam eruditi insolens ex pri, regione voluptua oportere cum et, nam accusamus abhorreant te. Usu ne nihil
+          pertinacia posidonium, ignota omittam salutandi ex usu. Sit et adolescens sententiae omittantur, an vim mundi placerat detraxit. In eripuit graecis sed, mucius torquatos definiebas cum cu. Eos torquatos voluptaria adipiscing no, in duo dolore
+          tibique, sed assum decore in. Te mei doctus principes, et pro dolore iuvaret delectus, ex latine virtute definiebas sed. Ne harum feugait eos. Virtute meliore scaevola vel et, in etiam ornatus aliquando cum. Nisl tota splendide et cum, unum
+          prima ornatus eu has. Usu an porro graecis, eu mei saperet detracto necessitatibus. Munere imperdiet vix an, mei numquam legendos omittantur ne. Ea sed putent perpetua posidonium. Id electram expetenda qui, ei pri quodsi verterem. Brute persius
+          sea in. Pro id natum putent, cum sumo erroribus corrumpit eu. Pro detracto moderatius te, mei cu saperet scaevola, fierent constituto has te. Nec ad sumo singulis cotidieque. At mei dissentiet consequuntur, verterem lucilius qui te. Qui cu dolorem
+          contentiones, ut facilisis philosophia eum, per id vidit nusquam. Clita reprimique et ius, vim aeterno imperdiet ut. Doming latine platonem ut mea. Appetere temporibus necessitatibus sea ea, ut libris dolorum perpetua sea, ius cu tollit dissentiunt.
+          Est ei mazim maiestatis reformidans, in posse delenit eum. Id per causae impetus repudiare, vim sumo nobis no, soluta accumsan et nam. Has ea quis ancillae legendos. Enim ocurreret eloquentiam cum in, oratio viderer blandit cu ius, eum simul
+          laoreet ex. Te ius dictas eruditi ponderum, vix quod nostrum ad.
+          </br>
+          </br>
+          Movet graeci indoctum qui ei, ad vim aeque animal. Sit ad nonumes pericula, vim essent postulant expetendis id, quem regione vel et. Ea mea vivendo theophrastus, no falli vulputate vim. Ius oblique interesset ad, omnes detraxit est et, at abhorreant sadipscing
+          vituperatoribus vis. Ut duo discere periculis, eu sit esse simul, sed cu erant vivendo. Id illud senserit vim, nibh hendrerit suscipiantur pro no. Esse liber ocurreret ea vel, ea harum copiosae lobortis vix, nam ex timeam feugiat pertinax. Augue
+          aliquip an mea, exerci aeterno adipisci eos cu. Persius percipit quaestio pro an. Munere pertinax expetendis quo ea, deleniti repudiandae ut nam. Oblique adversarium ea mea, ei numquam posidonium sed, eu pertinax definiebas cum. Phaedrum atomorum
+          disputationi ne his, cu mei consulatu disputationi, quo cu expetenda moderatius persequeris. Vix ne iudico tibique convenire. Id eam elitr convenire, per te elit mandamus, usu putant conceptam ei. Nec noluisse conceptam ea. Ferri dictas adversarium
+          pro no, no ius porro vulputate. Eu pro oratio adolescens, id nam dolore quodsi prodesset. Luptatum torquatos mea in, omnis augue virtute ne sea, cu alii principes gubergren sea. Verear copiosae in nec, vidisse scripta id vix. Officiis ponderum
+          nominati eos no. Sumo tota ad eum. Inani labore vix ex, offendit iudicabit at quo, et persius liberavisse mel. Eu mei quot sanctus, ad laoreet mediocrem consequat vel. Eos id primis constituto, qui maiorum imperdiet in, ea sale pericula honestatis
+          quo. Vix ut invidunt accusata. Ius ei verear senserit consetetur, ne eam fuisset suscipit delicatissimi, vel postea evertitur et. Id tale ornatus intellegam sed. Has ei assum exerci facilisi. Volumus suavitate ut duo, quas suscipit urbanitas
+          eam ut, has in eruditi efficiendi. No per blandit argumentum percipitur, mucius copiosae eu has. Sea elit vidit ut. In erant tacimates est. Democritum honestatis scripserit te duo, sed ut elitr aperiam. Id sale mundi iracundia sed, magna adhuc
+          commune vis id. Id mel sensibus sententiae, vidit commodo in pri. Ius illud sadipscing et, cum summo iisque in, nec nonumy vituperatoribus et. An facete alterum per. Sit primis postea honestatis ea. No stet omnis epicurei duo, ad nonumy antiopam
+          partiendo vim. Malis rationibus in ius, dolorem legendos vix ut, sea ut minimum luptatum recusabo. Velit propriae invenire eum ne, et qui ullum inani. An eruditi repudiandae mea, eos in dicunt timeam, vel enim solet cu. Quot eius maiestatis
+          ei mel, quo sententiae elaboraret dissentiet ei. Pro in errem deleniti definitiones. Per iusto moderatius et. Modo ponderum explicari sit ei, dicta eloquentiam ei pri, ea mel dicit vocibus. Semper verear ea pro, an sed wisi labore expetenda.
+          </br>
+          </br>
+          Est cibo erat mandamus at, at amet meliore deseruisse vix, reque aeterno vix no. Patrioque iracundia in est, quodsi admodum ocurreret te pro, est an facer accommodare. Eam debet doming evertitur ei, qui eligendi suscipit recusabo no, denique hendrerit
+          ius ad. Dissentiet reformidans intellegebat quo ei, pro magna adhuc et. No adolescens delicatissimi vix, et eam error aliquam. Id sanctus maiestatis per. Cu vel omnis ignota noluisse, sea propriae imperdiet eu. Ea pri cetero euismod definiebas,
+          tale lobortis cu mea. Quo ad ullum oratio impetus, his cu luptatum tacimates, vel te nobis persius. Te electram consetetur mel, ei mea mutat affert ubique, vim ea appetere evertitur. Cum probo solet liberavisse te, an dolor soluta pri. Dico
+          agam admodum pri ne, has utroque invidunt instructior cu, cu vix populo menandri. Mel noluisse percipitur ei. Quis mentitum vix ex, mei purto feugait interesset cu. Nec hinc scriptorem in, ex postulant assentior vim. Ludus electram consequuntur
+          mea no, an vis eius abhorreant definitiones. No sea eirmod persecuti, eam unum legere id. Ne expetenda abhorreant mei, id nam aeque omnium commodo. Et has assum option nonumes, vix fierent iracundia no. Ad diam urbanitas his. At legere intellegebat
+          vituperatoribus cum, invidunt scribentur id usu. Sed putent tincidunt ad. Sea ad persecuti vituperata, ius simul consul ne. Ex sit dicta labore, graeci volumus dignissim eam te. Cu est omnium nominavi maluisset, brute timeam insolens cu est.
+          In cum sanctus placerat convenire, ius repudiare incorrupte in. Et molestie indoctum incorrupte mel. Eu pri iisque dolorum, ne mea malis malorum phaedrum, mel eu veniam dolore. Has ei inciderint neglegentur, sit nisl quaestio accusamus te. Per
+          ei detracto legendos. Iudicabit dissentiunt pri ad, erant copiosae eos no, nulla ancillae ut eam. Has graeci elaboraret ei, in sanctus mediocritatem mei. Simul incorrupte nec ut. Cu possit habemus eam, in sit labore quaestio, ei nam mucius everti
+          intellegam. Est incorrupte consequuntur et, ad nec alii hinc. Duo case mazim pertinacia ne. Causae aperiam pri an. Cibo nihil luptatum nam ne. Ut pro elitr quaeque, probo docendi efficiantur in sed. Explicari moderatius suscipiantur sed ut,
+          nobis mollis debitis id nam. Harum hendrerit te sit. In quo dolore eligendi electram. Pro lobortis principes eu, id mel ullum alienum, tation habemus ad duo. An nam epicuri sensibus. Mei id feugiat efficiendi mediocritatem, et est enim epicuri.
+          Eu his indoctum interpretaris, ea stet maiestatis sea, eos equidem consequat eu. Vis ad utroque splendide efficiendi, per ad sint munere euripidis. Id quando percipit delicatissimi vim. Id deleniti quaestio patrioque vel. Sit ei adipiscing disputando,
+          modo ludus prompta no his. Ridens doctus atomorum per at, sit regione efficiantur te. Sonet vidisse sensibus in eum, cu nec amet nibh. Legendos evertitur usu ut, cum eu aliquid facilisis, omittam facilisis te his.
+          </br>
+          </br>
+          Quando referrentur id eam, quidam similique dissentias eu duo. Et quod omnis mea. In eos munere conceptam, ad etiam dicunt vel. Vel erat posse an, in illum equidem officiis eos. Eu eos utinam perpetua, ei solet ubique eirmod mei. Purto eripuit an eum,
+          ea his tation gloriatur, ei eam tempor aliquid volumus. Ea mea harum inimicus instructior, graecis scribentur ex eum. Iudico ridens.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--<html>
     <head>
         <title>Post here</title>
         <meta charset="UTF-8">
@@ -27,17 +304,19 @@
             <p>
                 <label for="lieudepart"> Lieu de départ: </label>
                 <input type= "text" name="lieudepart" >
-                <label for ="lieuarrivee"> Lieu d'arrivée: </label>
-                <input type= "text" name="lieuarrivee" >
-                <label for ="prix"> Prix (€): </label>
-                <input type= "number" name="prix" min="0" max="">
+</p>
+              <p>  <label for ="lieuarrivee"> Lieu d'arrivée: </label>
+                <input type= "text" name="lieuarrivee" > </p>
 
-                <label for= "weight"> Poids maximum (kg): </label>
-                <input type ="number" name ="weight" min="0" max="">
+              <p>  <label for ="prix"> Prix (€): </label>
+                <input type= "number" name="prix" min="0" max=""></p>
+
+               <p> <label for= "weight"> Poids maximum (kg): </label>
+                <input type ="number" name ="weight" min="0" max=""></p>
 
             <p>
                 <label for= "details"> Plus d'informations: </label>
-                    <textarea id= "infos" name ='infos'></textarea>
+                    <textarea id= "infos" name ='infos'></textarea></p>
                 </br>
             <p>
                 <input type="submit" name="valider" value="Valider"/>
