@@ -29,5 +29,5 @@ if (isset($_POST['titre'])) {
 }
 
 ?>
-<a href="/mypickup1/index.php">Retour</a>
+
 

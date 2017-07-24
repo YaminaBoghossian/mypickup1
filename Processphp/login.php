@@ -1,6 +1,7 @@
 <?php
 include_once 'Classes/Users.php';
 
+
 if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
 
     //On stock les infos du form en variable
@@ -33,9 +34,10 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
 
             $_SESSION['utilisateur'] = $pseudo;
             echo '<span style="color:green; font-weight: bold">You are now logged in!</span>'.
-            '<a href="/mypickup1/Postform.html"> Poster une annonce </a>
-            <br/><a href="deconnexion.php">Déconnexion</a>';
+            '<a href="/mypickup1/html/Postform.html"> Poster une annonce </a>
+            <br/><a href="Processphp/deconnexion.php">Déconnexion</a>';
 echo '<p>Bonjour, ' . $_SESSION['utilisateur'].'</p>';
+header('location: index.php');
         } 
         } else {
             //sinon messages d'erreur

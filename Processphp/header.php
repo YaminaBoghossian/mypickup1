@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-   <title>My PickUp</title>
+   <title></title>
    <style>
        @font-face {
             font-family: 'Handlee-Regular';
@@ -109,81 +109,66 @@
     }
    </style>
 </head>
+<body>
+    <?php
 
-   <?php require_once('Processphp/header.php'); 
-       ?>
-</br>
 
-<div style='text-align:center;'>
-<h3 style='text-align: center;margin: 5px 0px;border-bottom: 2px solid #666; display:inline-block;padding-bottom:10px'></h3>
-</div>
-    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">  
-                <div class="carousel-caption">
-                  <h3>My Pick Up entre particuliers </h3>
-                  <p>Rejoignez aujourd'hui la communauté My Pick Up </p>
-                </div>
-            </div>
-            <div class="item"> 
-                <div class="carousel-caption">
-                  <h3>My Pick Up partout dans le monde</h3>
-                  <p>Envois dans plus de 500 destinations,.</p>
-                </div>
-            </div>
-            <div class="item"> 
-                <div class="carousel-caption">
-                  <h3>My Pick Up en toute sécurité</h3>
-                  <p>Envois assurés et sécurisés.</p>
-                </div>
-            </div>
+if(isset($_SESSION['utilisateur'])){
+    //echo .'<p>Bonjour, '.$_SESSION['utilisateur'].'</p>';//
+   echo '.<header class="clearfix">
+    <div class="container">
+        <div class="header-left">
+            <h1>My Pick Up</h1>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-
-
-<?php
-include_once'Classes/Users.php';
-include_once 'Classes/Posts.php';
-require_once('Classes/Stock.php');
-   $newstock = new Stock();
-
-   session_start();
-  
-if (isset($_SESSION['utilisateur'])){
-    $user = $_SESSION['utilisateur'];
-    if (is_file('utilisateur/'.$user.'.txt')){
-        
-       $contenu= $newstock->readUser($user);
-        echo $newstock->asHtml($contenu);
-
-    }
-}
-$listeAnnonce = $newstock->readPosts();
-
-foreach ($listeAnnonce as $annonce){
-
-   echo '<br/>'.$annonce->htmlpost();
-}
+        <div class="header-right">
+            <label for="open">
+                <span class="hidden-desktop"></span>
+            </label>
+				
+				<nav>
+		<a href="espaceperso.php">Mon profil</a>
+					<a href ="html/Postform.html"> Poster une annonce</a>
+					<a href="#">Rechercher un départ</a>
+					<a href="html/about.html">A propos</a>
+					<a href="#">Contact</a>
+                                        
+                                        <a href="Processphp/deconnexion.php">Se déconnecter</a>
+				</nav>
+			</div>
+		</div>
+	</header>.'; 
 
 
 
+   
+} else {
+   echo '.<header class="clearfix">
+    <div class="container">
+        <div class="header-left">
+            <h1>My Pick Up</h1>
+        </div>
+        <div class="header-right">
+            <label for="open">
+                <span class="hidden-desktop"></span>
+            </label>
+				
+				<nav>
+		<a href="html/signupform.html">S\'inscrire</a>
+					<a href="html/signinform.html">Se connecter</a>
+					<a href="#">Voir les annonces</a>
+					<a href="html/about.html">A propos</a>;
+					<a href="#">Contact</a>
+				</nav>
+			</div>
+		</div>
+	</header>.'; 
+   
 ?>
-
+   <!--A afficher que si l'utilisateur n'est pas
+loggé -->
+   
+<?php } ?>
+   
+</body>
 </html>

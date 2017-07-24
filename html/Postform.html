@@ -1,133 +1,68 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <title>Post here</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <style>body,
-html {
-  width: 100%;
-  height: 100%;
-  display: table;
-  overflow: hidden;
-  background: #1a1a1a;
-}
-
-a {
-  color: #6897bb !important;
-  outline: none !important;
-  text-decoration: underline !important;
-}
-
-.checkbox {
-  color: #fff;
-}
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  border: 3px solid transparent;
-  box-shadow: none;
-  outline: 0 none;
-  height: 50px;
-}
-
-textarea:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
-  border: 3px solid #6897bb;
-  box-shadow: none;
-  outline: 0 none;
-}
-
-.modal-footer .btn-default {
-  border: 1px solid #ccc;
-}
-
-.modal-footer .btn-default:hover {
-  border: 1px solid #6897bb;
-  background: #fff;
-}
-
-.btn-default {
-  border: 3px solid transparent;
-}
-
-.btn-default:hover {
-  border: 3px solid #6897bb;
-  background: #fff;
-}
-
-.wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-body {
-  height: 300px;
-  overflow-y: scroll;
-}
-            </style>
+        
 </head>
+<style>
+       @font-face {
+            font-family: 'Handlee-Regular';
+            src: url('Handlee-Regular.ttf');
+        }
+        
+        h1{
+            font-family: 'Handlee-Regular';
+            font-size: 40px;
+            color: black;
+        }
+        h2 {
+            font-family: 'Lato';
+            font-size: 20px;
+            color: black;
+          
+        }
+       nav{
+        text-align: right;
+        color: lightskyblue;
+        font-size: 20px;
+           
+       }
+       body{
+  font-family: 'Lato', sans-serif;
+}
+</style>
     <body>
-        <header class="clearfix">
+        
+     <header class="clearfix">
     <div class="container">
-			<div class="header-left">
-				<h1>My Pick Up</h1>
-			</div>
-			<div class="header-right">
-				<label for="open">
-					<span class="hidden-desktop"></span>
-				</label>
+        <div class="header-left">
+            <h1><a href="index.php">My Pick Up</a></h1>
+        </div>
+        <div class="header-right">
+            <label for="open">
+                <span class="hidden-desktop"></span>
+            </label>
 				
 				<nav>
-					<a href="#">S'inscrire</a>
-					<a href="#">Se connecter</a>
-					<a href="#">Voir les annonces</a>
-					<a href="#">A propos</a>
+		<a href="#">Mon profil</a>
+                
+					<a href="#">Rechercher un départ</a>
+                                        
+					<a href="about.html">A propos</a>
 					<a href="#">Contact</a>
+                                        
+                                        <a href="deconnexion.php">Se déconnecter</a>
 				</nav>
 			</div>
 		</div>
 	</header>
-<section class="clearfix">
-		<div class="container">
-			<div class="section-left">
-				<h1 class="section-title">Lorem ipsum dolor sit amet.</h1>
-				<h5 class="section-tagline">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
-			</div>
-			<div class="section-right">
-				<button class="learn-more">En savoir plus</button>
-			</div>
-		</div>
-	</section>
-<h1> Poster une Annonce </h1>
+
+<h2> Poster une Annonce </h2>
+<div class="container">
 <div class="wrapper">
   <form class="form-horizontal " role="form" action ="Createpost.php" method ="POST">
 
@@ -179,10 +114,17 @@ input[type="color"]:focus,
        <div class="form-group">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
        <p>
-                <input type= "text" name="lieuarrivee" placeholder='Lieu arrivée' />
+                <input type= "number" name="prix" placeholder='prix' />
        </p>
       </div>
        </div>
+      <div class="form-group">
+          <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+              <p>
+                  <textarea name="infos"> </textarea>
+              </p>
+          </div>
+      </div>
     <div class="form-group">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
         <div class="checkbox">
@@ -198,12 +140,12 @@ input[type="color"]:focus,
 
     <div class="form-group">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-        <button type="submit" class="btn btn-default">Sign up</button>
+        <button type="submit" class="btn btn-default">Poster</button>
       </div>
     </div>
-
-  </form>
 </div>
+</div>
+      </form>
 
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog modal-md">
@@ -276,53 +218,8 @@ input[type="color"]:focus,
     </div>
   </div>
 </div>
-</div>
-<!--<html>
-    <head>
-        <title>Post here</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1> Poster une Annonce </h1>
-        <form action ="Createpost.php" method ="POST">
-            <p>
-                <label for="nom"> Titre: </label>
-                <input type="text" name="titre" id="titre" />
-            </p>
-            
-            <p>
-                <label for="datedepart"> Je pars le: </label>
-                <input type="date" name ="date" id="datedepart" />
-            </p>
-            
-            <p>
-                <label for="heuredepart"> à: </label>
-                <input type="time" name="time" id="time" />
-            </p>
-            
-            <p>
-                <label for="lieudepart"> Lieu de départ: </label>
-                <input type= "text" name="lieudepart" >
-</p>
-              <p>  <label for ="lieuarrivee"> Lieu d'arrivée: </label>
-                <input type= "text" name="lieuarrivee" > </p>
 
-              <p>  <label for ="prix"> Prix (€): </label>
-                <input type= "number" name="prix" min="0" max=""></p>
+    </div>
 
-               <p> <label for= "weight"> Poids maximum (kg): </label>
-                <input type ="number" name ="weight" min="0" max=""></p>
-
-            <p>
-                <label for= "details"> Plus d'informations: </label>
-                    <textarea id= "infos" name ='infos'></textarea></p>
-                </br>
-            <p>
-                <input type="submit" name="valider" value="Valider"/>
-            </p>
-        </form>
-
-
-    </body>
+</body>
 </html>

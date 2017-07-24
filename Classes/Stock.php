@@ -73,6 +73,7 @@ class Stock {
        $dossier = './annonce/';
        $files = scandir($dossier);
        $listeAnnonce = [];
+       var_dump($files);
        foreach ($files as $contenupost) {
            if (!is_dir($contenupost)) {
                $listeAnnonce[] = unserialize(file_get_contents($dossier . $contenupost));

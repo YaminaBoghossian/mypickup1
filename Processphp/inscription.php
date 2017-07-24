@@ -8,6 +8,7 @@ le mot de passe de l'utilisateur en question, encrypte
 
 include_once 'Classes/Stock.php';
 include_once'Classes/Users.php';
+include_once'signupform.html';
 
 
 if(isset($_POST['pseudo'])
@@ -26,6 +27,7 @@ if(isset($_POST['pseudo'])
    session_start();
    $_SESSION['utilisateur'] = $_POST['pseudo'];
    echo '<span style="color:green; font-weight: bold">You are now logged in!</span>';
+   header('location: index.php');
 }
 ?>
 
