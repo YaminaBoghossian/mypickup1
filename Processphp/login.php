@@ -1,5 +1,7 @@
 <?php
-include_once 'Classes/Users.php';
+session_start();
+include_once '../Classes/Users.php';
+
 
 
 if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
@@ -12,11 +14,11 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
     //un utilisateur existe si le fichier correspondant
     //existe (on teste avec is_file)
 
-    if (is_file('utilisateur/' . $pseudo . '.txt')) {
+    if (is_file('../utilisateur/' . $pseudo . '.txt')) {
 
         //On récupère le contenu du fichier, le mdp crypté
 
-        $contenu = unserialize(file_get_contents('./utilisateur/' . $pseudo . '.txt'));
+        $contenu = unserialize(file_get_contents('../utilisateur/' . $pseudo . '.txt'));
 
         //Si le contenu correspond au mdp entré par
         //l'utilisateur, la connexion est effective

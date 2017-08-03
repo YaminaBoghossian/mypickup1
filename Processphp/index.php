@@ -10,7 +10,7 @@
    <style>
        @font-face {
             font-family: 'Handlee-Regular';
-            src: url('Handlee-Regular.ttf');
+            src: url('../Handlee-Regular.ttf');
         }
         
         h1{
@@ -110,7 +110,7 @@
    </style>
 </head>
 
-   <?php require_once('Processphp/header.php'); 
+   <?php require_once('header.php'); 
        ?>
 </br>
 
@@ -159,16 +159,17 @@
 
 
 <?php
-include_once'Classes/Users.php';
-include_once 'Classes/Posts.php';
-require_once('Classes/Stock.php');
+       
+include_once'../Classes/Users.php';
+include_once '../Classes/Posts.php';
+require_once('../Classes/Stock.php');
    $newstock = new Stock();
 
-   session_start();
+  
   
 if (isset($_SESSION['utilisateur'])){
     $user = $_SESSION['utilisateur'];
-    if (is_file('utilisateur/'.$user.'.txt')){
+    if (is_file('../utilisateur/'.$user.'.txt')){
         
        $contenu= $newstock->readUser($user);
         echo $newstock->asHtml($contenu);

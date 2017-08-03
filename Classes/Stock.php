@@ -10,7 +10,7 @@ class Stock {
         }
 
         $postStock = serialize($post);
-        $newpost = fopen('annonce/' . $post->getPosttitle() . ".txt", "x+");
+        $newpost = fopen('../annonce/' . $post->getPosttitle() . ".txt", "x+");
         fwrite($newpost, $postStock);
         fclose($newpost);
     }
@@ -37,7 +37,7 @@ class Stock {
         }
 
         $userStock = serialize($user);
-        $new_file = fopen("utilisateur/" . $user->getUsername() . ".txt", "x+");
+        $new_file = fopen("../utilisateur/" . $user->getUsername() . ".txt", "x+");
         //On met son mdp encrypté dedans
         fwrite($new_file, $userStock);
         //on ferme le fichier
@@ -46,7 +46,7 @@ class Stock {
     
     function readUser (string $username): Users{
       
-        $contenu = unserialize(file_get_contents('./utilisateur/' . $username.  '.txt'));
+        $contenu = unserialize(file_get_contents('../utilisateur/' . $username.  '.txt'));
         return $contenu;
 
     }
@@ -70,7 +70,7 @@ class Stock {
     
 
    function readPosts(): Array {
-       $dossier = './annonce/';
+       $dossier = '../annonce/';
        $files = scandir($dossier);
        $listeAnnonce = [];
        var_dump($files);

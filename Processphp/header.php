@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+     session_start();
+     ?>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -10,7 +13,7 @@
    <style>
        @font-face {
             font-family: 'Handlee-Regular';
-            src: url('Handlee-Regular.ttf');
+            src: url('../Handlee-Regular.ttf');
         }
         
         h1{
@@ -111,29 +114,28 @@
 </head>
 <body>
     <?php
-
-
-
+   
 if(isset($_SESSION['utilisateur'])){
     //echo .'<p>Bonjour, '.$_SESSION['utilisateur'].'</p>';//
    echo '.<header class="clearfix">
     <div class="container">
         <div class="header-left">
-            <h1>My Pick Up</h1>
+           <h1><a href="index.php">My Pick Up</a></h1>
         </div>
         <div class="header-right">
             <label for="open">
                 <span class="hidden-desktop"></span>
             </label>
+            
 				
 				<nav>
-		<a href="espaceperso.php">Mon profil</a>
-					<a href ="html/Postform.html"> Poster une annonce</a>
-					<a href="#">Rechercher un départ</a>
-					<a href="html/about.html">A propos</a>
+		<a href="espaceperso.php">My account</a>
+					<a href ="../html/Postform.html"> New post</a>
+					<a href="#"> Search</a>
+					<a href="../html/about.html">About</a>
 					<a href="#">Contact</a>
                                         
-                                        <a href="Processphp/deconnexion.php">Se déconnecter</a>
+                                        <a href="deconnexion.php">Sign out</a>
 				</nav>
 			</div>
 		</div>
@@ -154,21 +156,17 @@ if(isset($_SESSION['utilisateur'])){
             </label>
 				
 				<nav>
-		<a href="html/signupform.html">S\'inscrire</a>
-					<a href="html/signinform.html">Se connecter</a>
-					<a href="#">Voir les annonces</a>
-					<a href="html/about.html">A propos</a>;
+		<a href="../html/inscription.html">Sign up</a>
+					<a href="../html/signinform.html">Sign in</a>
+					<a href="#">See the last posts</a>
+					<a href="../html/about.html">About</a>;
 					<a href="#">Contact</a>
 				</nav>
 			</div>
 		</div>
-	</header>.'; 
+	</header>';
    
-?>
-   <!--A afficher que si l'utilisateur n'est pas
-loggé -->
-   
-<?php } ?>
+ } ?>
    
 </body>
 </html>
